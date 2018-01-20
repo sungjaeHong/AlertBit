@@ -1,9 +1,6 @@
 package com.devhong.bitcoin.controller;
 
-import com.devhong.bitcoin.domain.model.PriceCoinResponse;
-import com.devhong.bitcoin.domain.model.bithumb.BithumbData;
 import com.devhong.bitcoin.domain.model.bithumb.BithumbResponse;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
