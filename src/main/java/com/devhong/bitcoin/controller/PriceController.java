@@ -1,6 +1,9 @@
 package com.devhong.bitcoin.controller;
 
 import com.devhong.bitcoin.domain.model.bithumb.BithumbResponse;
+import com.devhong.bitcoin.domain.model.upbit.UpbitResponse;
+import com.devhong.bitcoin.service.PriceService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,11 +16,17 @@ import org.springframework.web.client.RestTemplate;
 @RestController
 @RequestMapping(path = "/price")
 public class PriceController {
-    @Value(value = "${bithumb.api.url}")
-    private String bithumApiUrl;
-    @GetMapping(path = "/all")
-    public BithumbResponse getAllPrice() {
-        BithumbResponse response = new RestTemplate().getForObject(bithumApiUrl, BithumbResponse.class);
-        return response;
+
+    @Autowired
+    PriceService priceService;
+
+    @GetMapping(path = "/bithumb")
+    public BithumbResponse getAllPriceByBithumb() {
+        return priceService.getAllPriceByBithumb();
+    }
+
+    @GetMapping(path = "/upbit")
+    public UpbitResponse getAllPriceByUpbit() {
+        return priceService.getAllPriceByUpbit();
     }
 }
