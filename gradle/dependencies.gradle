@@ -1,0 +1,9 @@
+ext {
+    gradleWrapperVersion = '4.3.1'
+    springBootVersion = '1.5.9.RELEASE'
+    springfoxVersion = '2.7.0'
+    lombokVersion = '1.16.6'
+    springCloudVersion = 'Edgware.RELEASE'
+    jacksonVersion = '2.9.2'
+    commonsLang3Version = '3.7'
+}

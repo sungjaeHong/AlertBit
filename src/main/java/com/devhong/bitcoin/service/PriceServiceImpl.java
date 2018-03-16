@@ -4,6 +4,7 @@ import com.devhong.bitcoin.domain.model.bithumb.BithumbResponse;
 import com.devhong.bitcoin.domain.model.upbit.UpbitCoinInfo;
 import com.devhong.bitcoin.domain.model.upbit.UpbitData;
 import com.devhong.bitcoin.domain.model.upbit.UpbitResponse;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
@@ -15,6 +16,7 @@ import java.util.List;
  * Created by devHong on 2018. 3. 3..
  */
 @Service
+@Slf4j
 public class PriceServiceImpl implements PriceService{
 
     @Value(value = "${bithumb.api.url}")
@@ -26,7 +28,6 @@ public class PriceServiceImpl implements PriceService{
     @Override
     public BithumbResponse getAllPriceByBithumb() {
         BithumbResponse response = new RestTemplate().getForObject(bithumbApiUrl, BithumbResponse.class);
-        System.out.println("price bithumb");
         return response;
     }
 
