@@ -13,7 +13,7 @@ import org.springframework.web.client.RestTemplate;
 /**
  * Created by devHong on 2018. 1. 13..
  */
-@RestController
+@RestController(value = "PriceController")
 @RequestMapping(path = "/v1/price")
 public class PriceController {
 

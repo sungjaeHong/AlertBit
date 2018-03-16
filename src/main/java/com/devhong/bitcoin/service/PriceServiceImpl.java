@@ -38,9 +38,9 @@ public class PriceServiceImpl implements PriceService{
         UpbitCoinInfo[] STRAT_DATA = new RestTemplate().getForObject(upbitApiUrl + "STRAT", UpbitCoinInfo[].class);
         UpbitCoinInfo[] ETH_DATA = new RestTemplate().getForObject(upbitApiUrl + "ETH", UpbitCoinInfo[].class);
 
-        response.setBTC(BTC_DATA[0]);
+        /*response.setBTC(BTC_DATA[0]);
         response.setSTRAT(STRAT_DATA[0]);
-        response.setETH(ETH_DATA[0]);
+        response.setETH(ETH_DATA[0]);*/
 
         return response;
     }
